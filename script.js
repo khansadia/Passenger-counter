@@ -1,6 +1,26 @@
-//document.getElementById("count-el").innerText = 10
+const countEl = document.querySelector('#count-el');
 
-// To store data we need a variable that store data
-let count = 0
+const saveEl = document.querySelector("#save-el");
 
-console.log(count)
+let count = 0;
+let countArray = [];
+
+const increment = () => {
+    count ++;
+    countEl.innerText = count;
+}
+
+const save = () => {
+    countArray.push(count);
+    saveEl.innerText = `Previous entries: ${countArray.join(" - ")}`;
+    count = 0;
+    countEl.innerText = count;
+}
+
+// const save = () => {
+//     let countStr = count + ' - '
+//     saveEl.textContent += countStr;
+//     count = 0;
+//     countEl.innerText = count;
+// }
+
